@@ -13,8 +13,8 @@ import scala.collection.mutable
  * usage:
  *
  * gpio { pin =>
- *   pin number 1 digital input
- *   pin nuber 2 analog output
+ * pin number 1 digital input
+ * pin nuber 2 analog output
  * }
  */
 object CfgDSL {
@@ -73,7 +73,7 @@ object CfgDSL {
      * describes the digital state (hi or low) of a pin
      */
     sealed trait DigitalState extends DslComponent
-    case object hi extends DigitalState
+    case object high extends DigitalState
     case object low extends DigitalState
 
 
@@ -100,6 +100,7 @@ object CfgDSL {
     }
 
     object ConfigKeys {
+        val pins = "pins"
         val layout = "layout"
         val number = "number"
         val mode = "mode"
@@ -118,8 +119,8 @@ sealed trait DslComponent extends Product {
 
 // default implementation of the dsl
 private class PinBuilder(layout: Layout = pi4j) extends PinNumberBuilder with PinModeBuilder with DigitalInitializer with AnalogInitializer {
-    import com.typesafe.config.{ConfigFactory => cf, ConfigValueFactory => cvf}
     import CfgDSL._
+    import com.typesafe.config.{ConfigFactory => cf, ConfigValueFactory => cvf}
 
     val pins = mutable.Set[Int]()
     val modes = mutable.Map[Int, Mode]()
@@ -184,7 +185,7 @@ private class PinBuilder(layout: Layout = pi4j) extends PinNumberBuilder with Pi
             cvf.fromMap(pinmap)
         }
 
-        map("pins") = cvf.fromIterable(pinout)
+        map(ConfigKeys.pins) = cvf.fromIterable(pinout)
         cf.parseMap(map)
     }
 }

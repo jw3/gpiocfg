@@ -7,7 +7,7 @@ import net.ceedubs.ficus.Ficus._
 
 import scala.collection.JavaConversions._
 
-
+// todo use json4s
 object CfgIO {
 
     /**
@@ -20,7 +20,7 @@ object CfgIO {
                       pull: Option[Pull])
 
     /**
-     */
+      */
     implicit class RichPins(conf: Config) {
         def pins(): Seq[PinCfg] = conf.getConfigList("pins").map { cfg =>
             PinCfg(cfg.getInt("number"),
@@ -61,7 +61,7 @@ object CfgIO {
     }
 
     private[gpiocfg] def digitalState(cfg: Config): Option[DigitalState] = cfg.getAs[String]("set") match {
-        case Some(hi.uid) => Option(hi)
+        case Some(high.uid) => Option(high)
         case Some(low.uid) => Option(low)
         case _ => None
     }
