@@ -1,7 +1,7 @@
-package gpio4s.gpiocfg
+package gpiocfg
 
 import com.typesafe.config.Config
-import gpio4s.gpiocfg.CfgDSL._
+import gpiocfg.GpioCfg._
 
 import scala.collection.JavaConversions._
 import scala.collection.mutable
@@ -17,9 +17,10 @@ import scala.collection.mutable
  * pin nuber 2 analog output
  * }
  */
-object CfgDSL {
+object GpioCfg {
     /**
      * entrypoint to DSL
+ *
      * @param fn Function that configures the builder
      * @return
      */
@@ -119,7 +120,7 @@ sealed trait DslComponent extends Product {
 
 // default implementation of the dsl
 private class PinBuilder(layout: Layout = pi4j) extends PinNumberBuilder with PinModeBuilder with DigitalInitializer with AnalogInitializer {
-    import CfgDSL._
+    import GpioCfg._
     import com.typesafe.config.{ConfigFactory => cf, ConfigValueFactory => cvf}
 
     val pins = mutable.Set[Int]()

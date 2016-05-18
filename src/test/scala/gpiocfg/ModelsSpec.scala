@@ -1,13 +1,13 @@
-package gpio4s.gpiocfg
+package gpiocfg
 
-import gpio4s.gpiocfg.CfgDSL.Modes.digital
-import gpio4s.gpiocfg.CfgDSL.{down, high, output}
+import gpiocfg.GpioCfg.Modes.digital
+import gpiocfg.GpioCfg.{down, high, output}
 import org.scalatest.{Matchers, WordSpecLike}
-import CfgDSL._
-import CfgIO._
+import GpioCfg._
+import GpioCfgModels._
 
 
-class IoSpec extends WordSpecLike with Matchers {
+class ModelsSpec extends WordSpecLike with Matchers {
     "bean access" should {
         "basic" in {
             val conf = gpio {_ number 0 digital output}

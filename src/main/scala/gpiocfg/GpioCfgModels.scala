@@ -1,14 +1,14 @@
-package gpio4s.gpiocfg
+package gpiocfg
 
 import com.typesafe.config.Config
-import gpio4s.gpiocfg.CfgDSL.Modes.{analog, digital, pwm}
-import gpio4s.gpiocfg.CfgDSL._
+import gpiocfg.GpioCfg.Modes.{analog, digital, pwm}
+import gpiocfg.GpioCfg._
 import net.ceedubs.ficus.Ficus._
 
 import scala.collection.JavaConversions._
 
 // todo use json4s
-object CfgIO {
+object GpioCfgModels {
 
     /**
      * models a Pin from the config

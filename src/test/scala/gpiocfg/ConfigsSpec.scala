@@ -1,6 +1,6 @@
-package gpio4s.gpiocfg
+package gpiocfg
 
-import gpio4s.gpiocfg.CfgDSL._
+import gpiocfg.GpioCfg._
 import org.scalatest.{FlatSpec, Matchers}
 
 import scala.collection.JavaConversions._

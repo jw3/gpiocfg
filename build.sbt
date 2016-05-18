@@ -1,4 +1,4 @@
-organization := "gpio4s"
+organization := "com.github.jw3"
 name := "gpiocfg"
 version := "0.2-SNAPSHOT"
 licenses +=("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
