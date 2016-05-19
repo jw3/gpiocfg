@@ -1,6 +1,7 @@
 GPIO Pin Configuration DSL
 ==========================
 [![Build Status](https://travis-ci.org/jw3/gpiocfg.svg?branch=master)](https://travis-ci.org/jw3/gpiocfg)
+[![Dependencies](https://app.updateimpact.com/badge/701268856357916672/gpiocfg.svg?config=compile)](https://app.updateimpact.com/latest/701268856357916672/gpiocfg)
 
 Scala DSL for defining pin states, which are output as [Typesafe Config](https://github.com/typesafehub/config)
 

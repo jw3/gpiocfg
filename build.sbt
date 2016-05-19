@@ -19,3 +19,5 @@ libraryDependencies ++= {
     "org.scalatest" %% "scalatest" % scalatestVersion % Test
   )
 }
+
+com.updateimpact.Plugin.apiKey in ThisBuild := sys.env.getOrElse("UPDATEIMPACT_API_KEY", (com.updateimpact.Plugin.apiKey in ThisBuild).value)
