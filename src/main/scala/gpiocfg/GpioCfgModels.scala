@@ -22,7 +22,7 @@ object GpioCfgModels {
   /**
    */
   implicit class RichPins(conf: Config) {
-    def pins(): Seq[PinCfg] = conf.getConfigList("pins").map { cfg =>
+    def pins: Seq[PinCfg] = conf.getConfigList("pins").map { cfg =>
       PinCfg(cfg.getInt("number"),
         modes(cfg),
         direction(cfg),
